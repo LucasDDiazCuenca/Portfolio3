@@ -22,7 +22,7 @@ export default function Footer() {
                 theme === "dark" ? "text-white" : "text-slate-900"
               }`}
             >
-              Studio Cristals
+              Studio Cristal
             </h3>
             <p
               className={`text-base mb-4 max-w-md transition-colors duration-500 ${
@@ -142,7 +142,7 @@ export default function Footer() {
               theme === "dark" ? "text-gray-400" : "text-slate-500"
             }`}
           >
-            © {currentYear} Studio Cristals. All rights reserved.
+            © {currentYear} Studio Cristal. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <a
