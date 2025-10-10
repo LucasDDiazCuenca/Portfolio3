@@ -25,9 +25,22 @@ export default function Intro() {
 
   return (
     <div
-      className={`min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] transition-all duration-300 ${theme}`}
+      className={`min-h-screen w-full transition-all duration-500 ${
+        theme === "dark"
+          ? "bg-gradient-to-br from-black via-purple-950 to-black"
+          : "bg-gradient-to-br from-slate-50 via-white to-slate-100"
+      } text-[var(--text-primary)]`}
     >
-      <main className="flex flex-col items-center justify-center min-h-screen p-8">
+      {/* Patrón de fondo sutil para profundidad */}
+      <div
+        className={`absolute inset-0 ${
+          theme === "dark"
+            ? "bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.1)_0%,transparent_50%)]"
+            : "bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.03)_0%,transparent_50%)]"
+        }`}
+      />
+
+      <main className="relative flex flex-col items-center justify-center min-h-screen p-8 z-10">
         <div className="mb-8">
           <Cristal1 />
         </div>
