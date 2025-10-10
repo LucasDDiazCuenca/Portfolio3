@@ -47,7 +47,7 @@ export default function Intro() {
 
         <div className="text-center mb-8">
           <SplitText
-            text="Cristal Studio"
+            text="Studio Cristal"
             className="text-4xl font-bold mb-2 text-[var(--text-primary)]"
             delay={0.5}
             duration={0.8}

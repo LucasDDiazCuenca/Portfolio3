@@ -161,7 +161,7 @@ export default function MainComponent() {
               theme === "dark" ? "text-white" : "text-slate-900"
             }`}
           >
-            Studio Cristals
+            Studio Cristal
           </h1>
           <p
             className={`text-xl md:text-2xl opacity-80 drop-shadow-lg transition-colors duration-500 ${"text-[var(--accent-color)]"}`}
