@@ -1,8 +1,8 @@
 import careexpandThumbnail from "../../assets/projects/thumbnails/carexpandThumbnail.png";
 import queryhealthThumbnail from "../../assets/projects/thumbnails/queryhealthThumbnail.png";
-import queryHealthMobileThumbnail from "../../assets/projects/thumbnails/queryHealthMobileThumbnail.png";
+import queryHealthMobileThumbnail from "../../assets/projects/thumbnails/queryhealthMobileThumbnail.png";
 import dspThumbnail from "../../assets/projects/thumbnails/dspThumbnail.png";
-import pianoPracticeThumbnail from "../../assets/projects/thumbnails/pianoPracticeThumbnail.png";
+import pianoPracticeThumbnail from "../../assets/projects/thumbnails/PianoPracticeThumbnail.png";
 
 import portfolioThumbnails from "../../assets/projects/thumbnails/portfolioThumbnails.png";
 
