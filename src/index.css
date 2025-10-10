@@ -1,0 +1,529 @@
+@import "tailwindcss";
+
+/* Variables CSS para el sistema de temas */
+:root {
+  /* Tema claro */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #1a1c20;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --accent-color: #7c3aed;
+
+  /* Cristal Green - Colores verdes neón oscuros (reducidos) */
+  --cristal-green-100: #0d2e0d;
+  --cristal-green-300: #1f6b1f;
+  --cristal-green-500: #16a34a;
+  --cristal-green-700: #166534;
+  --cristal-green-900: #052e16;
+  --cristal-green-neon: #00ff41;
+  --cristal-green-glow: #39ff14;
+
+  /* Cristal Blue - Colores azules neón */
+  --cristal-blue-100: #0a1a2e;
+  --cristal-blue-300: #1e3a8a;
+  --cristal-blue-500: #3b82f6;
+  --cristal-blue-700: #1d4ed8;
+  --cristal-blue-900: #1e3a8a;
+  --cristal-blue-neon: #00c1f1;
+  --cristal-blue-glow: #0ea5e9;
+
+  /* Cristal Golden - Colores dorados (más oscuros para light mode) */
+  --cristal-golden-100: #2d1b0a;
+  --cristal-golden-300: #8b6914;
+  --cristal-golden-500: #b8860b;
+  --cristal-golden-700: #9a7209;
+  --cristal-golden-900: #654708;
+  --cristal-golden-neon: #ffd700;
+  --cristal-golden-glow: #ffed4e;
+}
+
+[data-theme="dark"] {
+  /* Tema oscuro */
+  --bg-primary: #0f0520;
+  --bg-secondary: #1a0b2e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border-color: #374151;
+  --accent-color: #818cf8;
+
+  /* Cristal Green - Versión más intensa para tema oscuro (reducidos) */
+  --cristal-green-100: #143d14;
+  --cristal-green-300: #2a7c2a;
+  --cristal-green-500: #28a745;
+  --cristal-green-700: #155724;
+  --cristal-green-900: #062e10;
+  --cristal-green-neon: #00ff55;
+  --cristal-green-glow: #4dff4d;
+
+  /* Cristal Blue - Versión más intensa para tema oscuro */
+  --cristal-blue-100: #0f2a3d;
+  --cristal-blue-300: #2563eb;
+  --cristal-blue-500: #60a5fa;
+  --cristal-blue-700: #3b82f6;
+  --cristal-blue-900: #1e40af;
+  --cristal-blue-neon: #00d4ff;
+  --cristal-blue-glow: #38bdf8;
+
+  /* Cristal Golden - Versión más intensa para tema oscuro */
+  --cristal-golden-100: #3d2914;
+  --cristal-golden-300: #d4af37;
+  --cristal-golden-500: #ffd700;
+  --cristal-golden-700: #ffb347;
+  --cristal-golden-900: #b8860b;
+  --cristal-golden-neon: #ffed4e;
+  --cristal-golden-glow: #fff700;
+}
+
+/* Estilos base con Tailwind */
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+  @apply transition-all duration-300;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  /* Prevenir overscroll blanco en mobile */
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Estilos para la aplicación */
+#root {
+  @apply min-h-screen transition-all duration-300;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Clases de utilidad para animaciones */
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+/* Animaciones adicionales para el menú */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Efecto de cristal/glass para el menú */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Estados iniciales para prevenir flash de GSAP */
+.project-card {
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: none;
+}
+
+.about-section {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: none;
+}
+
+.contact-title {
+  opacity: 0;
+  transform: translateY(-50px) scale(0.8);
+  transition: none;
+}
+
+.contact-form {
+  opacity: 0;
+  transform: translateX(-100px) rotateY(-15deg);
+  transition: none;
+}
+
+.contact-info {
+  opacity: 0;
+  transform: translateX(100px) rotateY(15deg);
+  transition: none;
+}
+
+.floating-element {
+  opacity: 0;
+  transform: scale(0) rotate(180deg);
+  transition: none;
+}
+
+/* Estado cuando las animaciones están listas */
+.gsap-ready .project-card,
+.gsap-ready .about-section,
+.gsap-ready .contact-title,
+.gsap-ready .contact-form,
+.gsap-ready .contact-info,
+.gsap-ready .floating-element {
+  transition: all 0.3s ease;
+}
+
+/* Firefly animations for floating green circles */
+@keyframes firefly1 {
+  0% {
+    transform: translate(2rem, 2rem) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  12% {
+    transform: translate(5rem, 1rem) rotate(15deg) scale(1.1);
+    opacity: 0.9;
+  }
+  25% {
+    transform: translate(9rem, 3rem) rotate(-10deg) scale(1.2);
+    opacity: 1;
+  }
+  37% {
+    transform: translate(13rem, 7rem) rotate(25deg) scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(16rem, 12rem) rotate(-15deg) scale(0.8);
+    opacity: 0.5;
+  }
+  62% {
+    transform: translate(14rem, 16rem) rotate(20deg) scale(1);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(9rem, 15rem) rotate(-25deg) scale(1.1);
+    opacity: 0.9;
+  }
+  87% {
+    transform: translate(5rem, 11rem) rotate(10deg) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(2rem, 2rem) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes firefly2 {
+  0% {
+    transform: translate(3rem, 12rem) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  15% {
+    transform: translate(6rem, 9rem) rotate(-20deg) scale(0.9);
+    opacity: 0.8;
+  }
+  30% {
+    transform: translate(10rem, 5rem) rotate(30deg) scale(1.1);
+    opacity: 0.9;
+  }
+  45% {
+    transform: translate(15rem, 3rem) rotate(-15deg) scale(1.3);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(17rem, 8rem) rotate(25deg) scale(0.8);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translate(14rem, 14rem) rotate(-30deg) scale(0.7);
+    opacity: 0.4;
+  }
+  90% {
+    transform: translate(8rem, 16rem) rotate(15deg) scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(3rem, 12rem) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes firefly3 {
+  0% {
+    transform: translate(8rem, 1rem) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  20% {
+    transform: translate(5rem, 4rem) rotate(35deg) scale(1.1);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translate(3rem, 9rem) rotate(-20deg) scale(0.9);
+    opacity: 0.9;
+  }
+  60% {
+    transform: translate(7rem, 14rem) rotate(40deg) scale(0.9);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(12rem, 16rem) rotate(-25deg) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(8rem, 1rem) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes firefly4 {
+  0% {
+    transform: translate(12rem, 8rem) rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(8rem, 5rem) rotate(-30deg) scale(1.2);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(4rem, 3rem) rotate(25deg) scale(1.3);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translate(16rem, 6rem) rotate(-35deg) scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(12rem, 8rem) rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+}
+
+@keyframes firefly5 {
+  0% {
+    transform: translate(15rem, 5rem) rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+  16% {
+    transform: translate(12rem, 2rem) rotate(20deg) scale(0.9);
+    opacity: 0.6;
+  }
+  33% {
+    transform: translate(7rem, 4rem) rotate(-25deg) scale(1.1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(3rem, 8rem) rotate(30deg) scale(1.2);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translate(6rem, 13rem) rotate(-20deg) scale(0.8);
+    opacity: 0.8;
+  }
+  83% {
+    transform: translate(11rem, 15rem) rotate(15deg) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(15rem, 5rem) rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+}
+
+/* Slower firefly animations for additional fireflies */
+@keyframes firefly6 {
+  0% {
+    transform: translate(1rem, 6rem) rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  14% {
+    transform: translate(4rem, 4rem) rotate(10deg) scale(1.05);
+    opacity: 0.5;
+  }
+  28% {
+    transform: translate(7rem, 7rem) rotate(-8deg) scale(0.95);
+    opacity: 0.7;
+  }
+  42% {
+    transform: translate(11rem, 10rem) rotate(12deg) scale(1.1);
+    opacity: 0.6;
+  }
+  56% {
+    transform: translate(14rem, 13rem) rotate(-6deg) scale(0.9);
+    opacity: 0.4;
+  }
+  70% {
+    transform: translate(12rem, 16rem) rotate(8deg) scale(1);
+    opacity: 0.8;
+  }
+  84% {
+    transform: translate(7rem, 14rem) rotate(-10deg) scale(1.05);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(1rem, 6rem) rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes firefly7 {
+  0% {
+    transform: translate(16rem, 2rem) rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+  16% {
+    transform: translate(13rem, 5rem) rotate(-12deg) scale(0.9);
+    opacity: 0.6;
+  }
+  32% {
+    transform: translate(9rem, 8rem) rotate(15deg) scale(1.1);
+    opacity: 0.8;
+  }
+  48% {
+    transform: translate(5rem, 12rem) rotate(-9deg) scale(0.95);
+    opacity: 0.7;
+  }
+  64% {
+    transform: translate(2rem, 15rem) rotate(11deg) scale(1.05);
+    opacity: 0.5;
+  }
+  80% {
+    transform: translate(6rem, 17rem) rotate(-7deg) scale(0.85);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(16rem, 2rem) rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+}
+
+@keyframes firefly8 {
+  0% {
+    transform: translate(9rem, 17rem) rotate(0deg) scale(1);
+    opacity: 0.2;
+  }
+  12% {
+    transform: translate(6rem, 15rem) rotate(8deg) scale(1.1);
+    opacity: 0.4;
+  }
+  24% {
+    transform: translate(3rem, 11rem) rotate(-6deg) scale(0.9);
+    opacity: 0.6;
+  }
+  36% {
+    transform: translate(1rem, 7rem) rotate(10deg) scale(1.05);
+    opacity: 0.5;
+  }
+  48% {
+    transform: translate(4rem, 3rem) rotate(-8deg) scale(0.95);
+    opacity: 0.7;
+  }
+  60% {
+    transform: translate(8rem, 1rem) rotate(12deg) scale(1.1);
+    opacity: 0.8;
+  }
+  72% {
+    transform: translate(13rem, 4rem) rotate(-5deg) scale(0.85);
+    opacity: 0.4;
+  }
+  84% {
+    transform: translate(16rem, 9rem) rotate(7deg) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(9rem, 17rem) rotate(0deg) scale(1);
+    opacity: 0.2;
+  }
+}
+
+@keyframes firefly9 {
+  0% {
+    transform: translate(5rem, 10rem) rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+  18% {
+    transform: translate(8rem, 6rem) rotate(-14deg) scale(1.15);
+    opacity: 0.7;
+  }
+  36% {
+    transform: translate(12rem, 3rem) rotate(16deg) scale(0.9);
+    opacity: 0.9;
+  }
+  54% {
+    transform: translate(16rem, 7rem) rotate(-10deg) scale(1.05);
+    opacity: 0.8;
+  }
+  72% {
+    transform: translate(14rem, 12rem) rotate(12deg) scale(0.95);
+    opacity: 0.6;
+  }
+  90% {
+    transform: translate(9rem, 16rem) rotate(-8deg) scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(5rem, 10rem) rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+}
