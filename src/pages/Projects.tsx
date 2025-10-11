@@ -145,7 +145,7 @@ export default function Projects() {
           <div className="absolute -top-20 -right-32 opacity-30">
             <GreenCristal
               size="800px"
-              duration={4}
+              duration={2}
               color={theme === "dark" ? "#6B7280" : "#9CA3AF"}
               glow={0}
               enableRandomGeneration={false}
@@ -160,7 +160,7 @@ export default function Projects() {
           <div className="absolute top-1/2 -left-40 opacity-20">
             <GreenCristal
               size="600px"
-              duration={5}
+              duration={2}
               color={theme === "dark" ? "#4B5563" : "#D1D5DB"}
               glow={0}
               enableRandomGeneration={false}

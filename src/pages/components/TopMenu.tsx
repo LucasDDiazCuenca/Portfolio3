@@ -44,7 +44,7 @@ export default function TopMenu() {
               <div className="transform group-hover:scale-110 transition-transform duration-200 mt-16 mb-1">
                 <Cristal
                   size={60}
-                  duration={2}
+                  duration={1}
                   glow={4}
                   pauseOnHover={true}
                   color="#9333EA"

@@ -116,7 +116,7 @@ export default function CrystalDisplay({
             <CrystalComponent
               key={crystalKey}
               size={120}
-              duration={3}
+              duration={1}
               glow={12}
               color={crystalColor}
               enableRandomGeneration={false}

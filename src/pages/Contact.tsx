@@ -132,7 +132,7 @@ export default function Contact() {
         >
           <GoldenCristal
             size="350px"
-            duration={4}
+            duration={2}
             color={theme === "dark" ? "#6B7280" : "#9CA3AF"}
             glow={0}
             enableRandomGeneration={false}
@@ -148,7 +148,7 @@ export default function Contact() {
         >
           <GoldenCristal
             size="280px"
-            duration={3.5}
+            duration={2}
             color={theme === "dark" ? "#4B5563" : "#D1D5DB"}
             glow={0}
             enableRandomGeneration={false}
@@ -164,7 +164,7 @@ export default function Contact() {
         >
           <GoldenCristal
             size="320px"
-            duration={5}
+            duration={2}
             color={theme === "dark" ? "#52525B" : "#A1A1AA"}
             glow={0}
             enableRandomGeneration={false}
