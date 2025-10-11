@@ -90,7 +90,7 @@ const generateRandomCrystalPaths = (): {
 
 export const GoldenCristal: React.FC<GoldenCristalProps> = ({
   size = 69,
-  duration = 2.5,
+  duration = 1,
   color = "#D4AF37", // Color dorado por defecto
   className,
   pauseOnHover = false,

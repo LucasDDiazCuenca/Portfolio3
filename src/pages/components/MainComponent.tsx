@@ -128,18 +128,18 @@ export default function MainComponent() {
       ref={containerRef}
       className={`relative w-full h-screen overflow-hidden transition-all duration-500 ${
         theme === "dark"
-          ? "bg-gradient-to-br from-violet-950 via-purple-950 to-slate-950"
+          ? "bg-gradient-to-br from-violet-950 via-purple-950 to-black"
           : "bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200"
       }`}
       style={{
-        backgroundColor: theme === "dark" ? "#0f0520" : undefined,
+        backgroundColor: theme === "dark" ? "#020108" : undefined,
       }}
     >
       {/* Fondo base con patrón sutil violeta */}
       <div
         className={`absolute inset-0 ${
           theme === "dark"
-            ? "bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.15)_0%,transparent_70%)]"
+            ? "bg-[radial-gradient(circle_at_50%_50%,rgba(2,1,3,0.8)_0%,transparent_70%)]"
             : "bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.02)_0%,transparent_50%)]"
         }`}
       />
@@ -148,7 +148,7 @@ export default function MainComponent() {
       <div
         className={`absolute inset-0 ${
           theme === "dark"
-            ? "bg-gradient-to-t from-violet-950/60 via-purple-950/20 to-slate-950/30"
+            ? "bg-gradient-to-t from-black/95 via-purple-950/45 to-black/55"
             : "bg-gradient-to-t from-white/20 via-transparent to-white/10"
         }`}
       />

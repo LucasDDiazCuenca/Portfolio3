@@ -18,7 +18,7 @@ export interface Cristal1Props {
 
 export const Cristal1: React.FC<Cristal1Props> = ({
   size = 144,
-  duration = 2.5,
+  duration = 1,
   color = "#9333EA", // Color morado por defecto
   className,
   pauseOnHover = false,
