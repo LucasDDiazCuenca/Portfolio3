@@ -90,7 +90,7 @@ const generateRandomCrystalPaths = (): {
 
 export const GreenCristal: React.FC<GreenCristalProps> = ({
   size = 79,
-  duration = 2.5,
+  duration = 1,
   color = "#1F9700", // Color verde por defecto
   className,
   pauseOnHover = false,

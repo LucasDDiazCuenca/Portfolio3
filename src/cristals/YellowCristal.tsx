@@ -33,7 +33,7 @@ type AnimationPhase = "visible" | "disappearing" | "reappearing";
 
 export const Cristal: React.FC<CristalProps> = ({
   size = 144,
-  duration = 2.5,
+  duration = 1,
   variant = "blue", // Azul por defecto
   color,
   className,

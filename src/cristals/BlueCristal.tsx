@@ -90,7 +90,7 @@ const generateRandomCrystalPaths = (): {
 
 export const BlueCristal: React.FC<BlueCristalProps> = ({
   size = 136,
-  duration = 2.5,
+  duration = 1,
   color = "#00C1F1", // Color azul por defecto
   className,
   pauseOnHover = false,

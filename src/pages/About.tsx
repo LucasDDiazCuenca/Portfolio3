@@ -71,7 +71,7 @@ export default function About() {
         <div className="absolute -top-16 -left-20 opacity-25">
           <BlueCristal
             size="500px"
-            duration={3.5}
+            duration={2}
             color={theme === "dark" ? "#64748B" : "#94A3B8"}
             glow={0}
             enableRandomGeneration={false}
@@ -88,7 +88,7 @@ export default function About() {
         >
           <BlueCristal
             size="350px"
-            duration={4}
+            duration={2}
             color={theme === "dark" ? "#475569" : "#CBD5E1"}
             glow={0}
             enableRandomGeneration={false}
@@ -104,7 +104,7 @@ export default function About() {
         >
           <BlueCristal
             size="250px"
-            duration={5}
+            duration={2}
             color={theme === "dark" ? "#6B7280" : "#9CA3AF"}
             glow={0}
             enableRandomGeneration={false}
@@ -120,7 +120,7 @@ export default function About() {
         >
           <BlueCristal
             size="300px"
-            duration={3.8}
+            duration={2}
             color={theme === "dark" ? "#52525B" : "#A1A1AA"}
             glow={0}
             enableRandomGeneration={false}
@@ -138,7 +138,7 @@ export default function About() {
         >
           <BlueCristal
             size="400px"
-            duration={6}
+            duration={2}
             color={theme === "dark" ? "#3F3F46" : "#E4E4E7"}
             glow={0}
             enableRandomGeneration={false}
