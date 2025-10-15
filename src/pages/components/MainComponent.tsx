@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useTheme } from "../../hooks/useTheme";
+import BlurText from "../../components/fonts/BlurText";
+import { SplitText } from "../../components/fonts/SplitText";
 
 export default function MainComponent() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -156,18 +158,28 @@ export default function MainComponent() {
       {/* Contenido principal */}
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="text-center px-4">
-          <h1
+          <BlurText
+            text="Studio Cristal"
             className={`text-6xl md:text-8xl font-bold mb-6 opacity-90 drop-shadow-2xl transition-colors duration-500 ${
               theme === "dark" ? "text-white" : "text-slate-900"
             }`}
-          >
-            Studio Cristal
-          </h1>
-          <p
-            className={`text-xl md:text-2xl opacity-80 drop-shadow-lg transition-colors duration-500 ${"text-[var(--accent-color)]"}`}
-          >
-            We make the best of the best Web Sites
-          </p>
+            delay={100}
+            animateBy="words"
+            direction="top"
+            stepDuration={0.5}
+            threshold={0.3}
+            rootMargin="-50px"
+          />
+          <SplitText
+            text="We make the best of the best Web Sites"
+            className={`text-xl md:text-2xl opacity-80 drop-shadow-lg transition-colors duration-500 text-[var(--accent-color)]`}
+            delay={1}
+            duration={0.6}
+            staggerDelay={0.05}
+            animationType="fadeUp"
+            threshold={0.3}
+            rootMargin="-50px"
+          />
         </div>
       </div>
     </div>
