@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 interface SplitTextProps {
@@ -8,6 +8,8 @@ interface SplitTextProps {
   duration?: number;
   staggerDelay?: number;
   animationType?: "fadeUp" | "fadeIn" | "slideUp" | "scale";
+  threshold?: number;
+  rootMargin?: string;
 }
 
 export const SplitText: React.FC<SplitTextProps> = ({
@@ -17,12 +19,29 @@ export const SplitText: React.FC<SplitTextProps> = ({
   duration = 0.6,
   staggerDelay = 0.08,
   animationType = "fadeUp",
+  threshold = 0.1,
+  rootMargin = "0px",
 }) => {
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
   // Split text into individual characters, preserving spaces
   const characters = text.split("").map((char, index) => ({
     char: char === " " ? "\u00A0" : char, // Non-breaking space for proper spacing
     index,
   }));
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+      },
+      { threshold, rootMargin }
+    );
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [threshold, rootMargin]);
 
   // Animation variants based on type
   const getVariants = () => {
@@ -55,9 +74,10 @@ export const SplitText: React.FC<SplitTextProps> = ({
 
   return (
     <motion.div
+      ref={ref}
       className={className}
       initial="hidden"
-      animate="visible"
+      animate={inView ? "visible" : "hidden"}
       variants={{
         hidden: {},
         visible: {

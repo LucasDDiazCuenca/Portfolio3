@@ -60,6 +60,7 @@ export default function SubSectionLayout({
           title={content.title}
           subtitle={content.subtitle}
           description={content.description}
+          crystalType={crystalType}
         />
 
         {/* Botón CTA */}
