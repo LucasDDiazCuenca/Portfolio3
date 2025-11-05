@@ -116,18 +116,13 @@ export default function Contact() {
         }`}
       />
 
-      {/* Cristales dorados de fondo con efecto parallax */}
-      <div
-        className="fixed inset-0 pointer-events-none z-0"
-        style={{
-          transform: `translateY(${scrollY * 0.2}px)`,
-        }}
-      >
-        {/* Cristal 1 - Esquina superior izquierda (donde estaba la primera caja roja) */}
+      {/* Cristales dorados de fondo con efecto parallax vertical */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Cristal 1 - Esquina superior izquierda - Movimiento vertical rápido */}
         <div
           className="absolute top-10 left-8 opacity-25"
           style={{
-            transform: `translateY(${scrollY * 0.15}px) rotate(15deg)`,
+            transform: `translateY(${scrollY * 0.6}px)`,
           }}
         >
           <GoldenCristal
@@ -139,11 +134,11 @@ export default function Contact() {
           />
         </div>
 
-        {/* Cristal 2 - Centro derecha (donde estaba la segunda caja roja) */}
+        {/* Cristal 2 - Centro derecha - Movimiento vertical lento hacia arriba */}
         <div
           className="absolute top-1/6 right-10 opacity-20"
           style={{
-            transform: `translateY(${scrollY * 0.22}px) rotate(-25deg)`,
+            transform: `translateY(${scrollY * -0.3}px)`,
           }}
         >
           <GoldenCristal
@@ -155,17 +150,49 @@ export default function Contact() {
           />
         </div>
 
-        {/* Cristal 3 - Parte inferior centro (donde estaba la tercera caja roja) */}
+        {/* Cristal 3 - Parte inferior centro - Movimiento vertical medio */}
         <div
           className="absolute bottom-20 left-1/3 opacity-30"
           style={{
-            transform: `translateY(${scrollY * 0.18}px) rotate(40deg)`,
+            transform: `translateY(${scrollY * 0.4}px)`,
           }}
         >
           <GoldenCristal
             size="320px"
             duration={2}
             color={theme === "dark" ? "#52525B" : "#A1A1AA"}
+            glow={0}
+            enableRandomGeneration={false}
+          />
+        </div>
+
+        {/* Cristal 4 - Esquina superior derecha - Movimiento vertical lento */}
+        <div
+          className="absolute -top-10 right-1/4 opacity-15"
+          style={{
+            transform: `translateY(${scrollY * 0.2}px)`,
+          }}
+        >
+          <GoldenCristal
+            size="250px"
+            duration={2}
+            color={theme === "dark" ? "#3F3F46" : "#E4E4E7"}
+            glow={0}
+            enableRandomGeneration={false}
+          />
+        </div>
+
+        {/* Cristal 5 - Centro izquierda - Movimiento vertical medio */}
+        <div
+          className="absolute top-1/2 -left-20 opacity-20"
+          style={{
+            transform: `translateY(${scrollY * 0.35}px)`,
+          }}
+        >
+          <GoldenCristal
+            size="300px"
+            duration={2}
+            color={theme === "dark" ? "#475569" : "#CBD5E1"}
             glow={0}
             enableRandomGeneration={false}
           />
@@ -197,8 +224,8 @@ export default function Contact() {
               <p
                 className={`text-xl md:text-2xl max-w-md mt-4 lg:mt-0 transition-colors duration-500 ${"text-[var(--accent-color)]"}`}
               >
-                Ready to bring your ideas to life? Let's create something
-                amazing together.
+                Feel free to reach out if you'd like to connect or discuss
+                ideas.
               </p>
             </div>
           </div>
@@ -440,14 +467,9 @@ export default function Contact() {
                     theme === "dark" ? "text-gray-300" : "text-slate-600"
                   }`}
                 >
-                  I typically respond to messages within 24 hours. For urgent
-                  projects, feel free to call me directly.
+                  I typically respond to messages within 24 hours. Feel free to
+                  reach out if you'd like to connect or discuss ideas.
                 </p>
-                <div
-                  className={`mt-4 text-xs font-medium ${"text-[var(--accent-color)]"}`}
-                >
-                  ⚡ Fast turnaround guaranteed
-                </div>
               </div>
             </div>
           </div>

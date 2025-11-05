@@ -1,4 +1,7 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Animaciones para la página de Projects
 export const animateProjectsCards = (container: HTMLElement) => {

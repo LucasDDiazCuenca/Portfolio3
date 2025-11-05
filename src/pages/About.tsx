@@ -60,30 +60,29 @@ export default function About() {
         }`}
       />
 
-      {/* Cristales azules de fondo con efecto parallax */}
-      <div
-        className="fixed inset-0 pointer-events-none z-0"
-        style={{
-          transform: `translateY(${scrollY * 0.2}px)`,
-        }}
-      >
-        {/* Cristal grande - esquina superior izquierda */}
-        <div className="absolute -top-16 -left-20 opacity-25">
+      {/* Cristales azules de fondo con efecto parallax vertical */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Cristal grande - esquina superior izquierda - Movimiento vertical rápido */}
+        <div
+          className="absolute -top-16 -left-20 opacity-25"
+          style={{
+            transform: `translateY(${scrollY * 0.7}px)`,
+          }}
+        >
           <BlueCristal
             size="500px"
             duration={2}
             color={theme === "dark" ? "#64748B" : "#94A3B8"}
             glow={0}
             enableRandomGeneration={false}
-            className="transform rotate-12"
           />
         </div>
 
-        {/* Cristal mediano - centro derecha */}
+        {/* Cristal mediano - centro derecha - Movimiento vertical lento hacia arriba */}
         <div
           className="absolute top-1/3 -right-16 opacity-20"
           style={{
-            transform: `translateY(${scrollY * 0.15}px) rotate(-30deg)`,
+            transform: `translateY(${scrollY * -0.4}px)`,
           }}
         >
           <BlueCristal
@@ -95,11 +94,11 @@ export default function About() {
           />
         </div>
 
-        {/* Cristal pequeño - parte inferior */}
+        {/* Cristal pequeño - parte inferior - Movimiento vertical medio */}
         <div
           className="absolute bottom-20 left-1/4 opacity-30"
           style={{
-            transform: `translateY(${scrollY * 0.25}px) rotate(45deg)`,
+            transform: `translateY(${scrollY * 0.5}px)`,
           }}
         >
           <BlueCristal
@@ -111,11 +110,11 @@ export default function About() {
           />
         </div>
 
-        {/* Cristal superior derecha */}
+        {/* Cristal superior derecha - Movimiento vertical lento */}
         <div
           className="absolute -top-10 right-48 opacity-25"
           style={{
-            transform: `translateY(${scrollY * 0.18}px) rotate(-15deg)`,
+            transform: `translateY(${scrollY * 0.3}px)`,
           }}
         >
           <BlueCristal
@@ -127,19 +126,49 @@ export default function About() {
           />
         </div>
 
-        {/* Cristal centro - muy sutil */}
+        {/* Cristal centro - Movimiento vertical medio */}
         <div
           className="absolute top-1/2 left-1/2 opacity-30"
           style={{
-            transform: `translate(-50%, -50%) translateY(${
-              scrollY * 0.12
-            }px) rotate(60deg)`,
+            transform: `translate(-50%, -50%) translateY(${scrollY * 0.4}px)`,
           }}
         >
           <BlueCristal
             size="400px"
             duration={2}
             color={theme === "dark" ? "#3F3F46" : "#E4E4E7"}
+            glow={0}
+            enableRandomGeneration={false}
+          />
+        </div>
+
+        {/* Cristal adicional - Esquina inferior derecha - Movimiento vertical rápido */}
+        <div
+          className="absolute bottom-10 right-10 opacity-15"
+          style={{
+            transform: `translateY(${scrollY * 0.8}px)`,
+          }}
+        >
+          <BlueCristal
+            size="200px"
+            duration={2}
+            color={theme === "dark" ? "#374151" : "#F3F4F6"}
+            glow={0}
+            enableRandomGeneration={false}
+          />
+        </div>
+
+        {/* Cristal adicional - Centro izquierda - Movimiento vertical lento */}
+        <div
+          className="absolute top-[60%] -left-10 opacity-20"
+          style={{
+            transform: `translateY(${scrollY * 0.2}px)`,
+          }}
+        >
+          <BlueCristal
+            size="280px"
+            duration={2}
+            color={theme === "dark" ? "#4B5563" : "#D1D5DB"}
             glow={0}
             enableRandomGeneration={false}
           />
@@ -208,15 +237,6 @@ export default function About() {
                   }`}
                 >
                   📍 Based in Madrid & Lanzarote, Spain
-                </div>
-                <div
-                  className={`px-4 py-2 rounded-lg ${
-                    theme === "dark"
-                      ? "bg-[var(--accent-color)]/20 text-[var(--accent-color)]"
-                      : "bg-[var(--accent-color)]/10 text-[var(--accent-color)]"
-                  }`}
-                >
-                  💼 Available
                 </div>
               </div>
             </div>

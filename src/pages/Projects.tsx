@@ -153,7 +153,7 @@ export default function Projects() {
             />
           </div>
         ),
-        factor: 0.3,
+        factor: 0.5, // Más movimiento
       },
       {
         component: (
@@ -168,7 +168,37 @@ export default function Projects() {
             />
           </div>
         ),
-        factor: 0.2,
+        factor: 0.3, // Movimiento más evidente
+      },
+      {
+        component: (
+          <div className="absolute bottom-20 right-1/4 opacity-25">
+            <GreenCristal
+              size="400px"
+              duration={2}
+              color={theme === "dark" ? "#52525B" : "#A1A1AA"}
+              glow={0}
+              enableRandomGeneration={false}
+              className="transform rotate-60"
+            />
+          </div>
+        ),
+        factor: 0.4, // Movimiento intermedio
+      },
+      {
+        component: (
+          <div className="absolute top-1/4 left-1/3 opacity-15">
+            <GreenCristal
+              size="300px"
+              duration={2}
+              color={theme === "dark" ? "#3F3F46" : "#E4E4E7"}
+              glow={0}
+              enableRandomGeneration={false}
+              className="transform -rotate-30"
+            />
+          </div>
+        ),
+        factor: 0.6, // Movimiento más rápido
       },
     ],
     [theme]
