@@ -29,9 +29,8 @@ export default function Footer() {
                 theme === "dark" ? "text-gray-300" : "text-slate-600"
               }`}
             >
-              We make the best of the best Web Sites. Crafting digital
-              experiences that matter with cutting-edge technology and creative
-              design.
+              Frontend engineer passionate about creating beautiful and
+              functional digital experiences with modern web technologies.
             </p>
             <div className="flex space-x-4">
               {/* Social Links */}
@@ -96,35 +95,6 @@ export default function Footer() {
                   >
                     {link}
                   </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4
-              className={`text-lg font-semibold mb-4 transition-colors duration-500 ${
-                theme === "dark" ? "text-white" : "text-slate-900"
-              }`}
-            >
-              Services
-            </h4>
-            <ul className="space-y-2">
-              {[
-                "Web Development",
-                "UI/UX Design",
-                "Mobile Apps",
-                "Consulting",
-              ].map((service) => (
-                <li key={service}>
-                  <span
-                    className={`transition-colors duration-300 ${
-                      theme === "dark" ? "text-gray-300" : "text-slate-600"
-                    }`}
-                  >
-                    {service}
-                  </span>
                 </li>
               ))}
             </ul>

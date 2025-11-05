@@ -62,24 +62,6 @@ export default function MainSubSections() {
   return (
     <div ref={containerRef} className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <h2
-            className={`text-4xl md:text-6xl font-bold mb-6 transition-colors duration-500 ${
-              theme === "dark" ? "text-white" : "text-slate-900"
-            }`}
-          >
-            What I Do
-          </h2>
-          <p
-            className={`text-xl md:text-2xl max-w-3xl mx-auto transition-colors duration-500 ${
-              theme === "dark" ? "text-gray-300" : "text-slate-600"
-            }`}
-          >
-            Crafting digital experiences that matter
-          </p>
-        </div>
-
         {/* Sections Grid */}
         <div className="space-y-32">
           {/* Projects Section */}

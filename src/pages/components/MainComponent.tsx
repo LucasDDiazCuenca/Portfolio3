@@ -171,7 +171,7 @@ export default function MainComponent() {
             rootMargin="-50px"
           />
           <SplitText
-            text="We make the best of the best Web Sites"
+            text="Frontend Engineer & UI/UX Designer"
             className={`text-xl md:text-2xl opacity-80 drop-shadow-lg transition-colors duration-500 text-[var(--accent-color)]`}
             delay={1}
             duration={0.6}
