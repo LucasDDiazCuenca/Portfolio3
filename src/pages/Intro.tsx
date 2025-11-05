@@ -14,7 +14,7 @@ export default function Intro() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowButton(true);
-    }, 5000); // 5 segundos
+    }, 2000); // 2 segundos
 
     return () => clearTimeout(timer);
   }, []);
@@ -57,7 +57,7 @@ export default function Intro() {
           <SplitText
             text="By Lucas Diaz"
             className="text-xl text-[var(--accent-color)] mb-4"
-            delay={2.5}
+            delay={1.5}
             duration={0.6}
             staggerDelay={0.05}
             animationType="slideUp"
@@ -66,7 +66,7 @@ export default function Intro() {
 
         <div className="h-[60px] flex items-center justify-center">
           <FadeContent show={showButton} delay={0} duration={1000}>
-            <GlareHover className="inline-block" intensity={0.3} speed={300}>
+            <GlareHover className="inline-block" intensity={0.3} speed={200}>
               <button
                 onClick={handleLetsGo}
                 className="px-6 py-2 bg-[var(--accent-color)] text-white rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-2xl cursor-pointer"

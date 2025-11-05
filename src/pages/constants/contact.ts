@@ -9,7 +9,7 @@ const CONTACT_METHODS = [
     icon: "📱",
     title: "Phone",
     value: "+34 658 461 509",
-    description: "Call me during business hours",
+    description: "Feel free to call or text me",
   },
   {
     icon: "💻",

@@ -18,9 +18,9 @@ export const SUBSECTION_CONTENT = {
   },
   contact: {
     title: "Let's Talk",
-    subtitle: "Start Your Project",
+    subtitle: "Get in Touch",
     description:
-      "Ready to bring your vision to life? Let's collaborate and create something extraordinary together.",
+      "Feel free to reach out if you'd like to connect, discuss ideas, or just say hello.",
     buttonText: "Explore Let's Talk",
     navigationRoute: "/contact",
   },
